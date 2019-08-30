@@ -26,7 +26,7 @@ variable "aws_key_name" {
 }
 
 variable "external_access_cidr_blocks" {
-    type = list(string)
+  type = list(string)
 }
 
 # https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami

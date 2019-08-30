@@ -114,11 +114,11 @@ resource "aws_security_group" "container_instance" {
 }
 
 resource "aws_security_group_rule" "container_instance_ingress_ssh" {
-  type             = "ingress"
-  from_port        = 22
-  to_port          = 22
-  protocol         = "tcp"
-  cidr_blocks      = var.external_access_cidr_blocks
+  type        = "ingress"
+  from_port   = 22
+  to_port     = 22
+  protocol    = "tcp"
+  cidr_blocks = var.external_access_cidr_blocks
 
   security_group_id = aws_security_group.container_instance.id
 }
