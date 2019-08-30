@@ -1,0 +1,5 @@
+#!/bin/bash
+log_streams=$(aws logs describe-log-streams --log-group-name /aws/batch/job --order-by LastEventTime --descending --max-items 10 | jq -r ".logStreams | .[] | .logStreamName")
+for row in $log_streams; do
+    aws logs get-log-events --log-group-name /aws/batch/job --log-stream-name "${row}" | grep "/tmp"
+done
