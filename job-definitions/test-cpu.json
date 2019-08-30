@@ -1,0 +1,29 @@
+{
+    "image": "ubuntu:latest",
+    "vcpus": 4,
+    "memory": 4096,
+    "command": [
+      "sh",
+      "-c",
+      "lsblk; df -h /tmp"
+    ],
+    "volumes": [
+      {
+        "host": {
+          "sourcePath": "/media/nvme1n1"
+        },
+        "name": "nvme1n1"
+      }
+    ],
+    "environment": [],
+    "mountPoints": [
+      {
+        "containerPath": "/tmp",
+        "readOnly": false,
+        "sourceVolume": "nvme1n1"
+      }
+    ],
+    "privileged": false,
+    "ulimits": [],
+    "resourceRequirements": []
+  }
