@@ -16,4 +16,4 @@ mkdir -p /media/nvme1n1
 echo -e "/dev/nvme1n1\t/media/nvme1n1\text4\tdefaults,nofail,discard\t0\t2" >> /etc/fstab
 mount -a
 
---==MYBOUNDARY==
+--==BOUNDARY==
