@@ -13,7 +13,6 @@ Content-Type: text/cloud-boothook; charset="us-ascii"
 # - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-linux-ami-basics.html#supported-user-data-formats
 mkfs.ext4 -E nodiscard /dev/nvme1n1
 mkdir -p /media/nvme1n1
-echo -e "/dev/nvme1n1\t/media/nvme1n1\text4\tdefaults,nofail,discard\t0\t2" >> /etc/fstab
-mount -a
+mount -t ext4 -o defaults,nofail,discard /dev/nvme1n1 /media/nvme1n1
 
 --==BOUNDARY==

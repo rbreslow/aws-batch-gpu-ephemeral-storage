@@ -5,7 +5,7 @@
     "command": [
       "sh",
       "-c",
-      "lsblk; df -h /tmp"
+      "df -h /tmp"
     ],
     "volumes": [
       {
